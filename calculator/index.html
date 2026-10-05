@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculator — Liquid Glass</title>
+<meta name="description" content="A premium glassmorphism calculator with normal and scientific modes, light and dark themes." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient background orbs (signature liquid-glass element) -->
+  <div class="orb-field" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+  </div>
+
+  <div class="app">
+
+    <header class="topbar">
+      <h1 class="brand">
+        <span class="brand-mark" aria-hidden="true">∷</span>
+        Calculator
+      </h1>
+
+      <div class="controls">
+        <div class="mode-switch" role="tablist" aria-label="Calculator mode">
+          <button type="button" class="mode-btn is-active" id="modeNormalBtn" role="tab" aria-selected="true">Normal</button>
+          <button type="button" class="mode-btn" id="modeSciBtn" role="tab" aria-selected="false">Scientific</button>
+          <span class="mode-thumb" aria-hidden="true"></span>
+        </div>
+
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/>
+            <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <path d="M12 2.5v2.2"/><path d="M12 19.3v2.2"/>
+              <path d="M4.2 4.2l1.55 1.55"/><path d="M18.25 18.25l1.55 1.55"/>
+              <path d="M2.5 12h2.2"/><path d="M19.3 12h2.2"/>
+              <path d="M4.2 19.8l1.55-1.55"/><path d="M18.25 5.75l1.55-1.55"/>
+            </g>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20.2 14.3A8.4 8.4 0 1 1 9.7 3.8a6.7 6.7 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="calculator glass" id="calculator" data-mode="normal">
+
+      <section class="display" aria-label="Calculator display">
+        <div class="expression" id="expression" aria-live="off">&nbsp;</div>
+        <div class="result" id="result" aria-live="polite">0</div>
+      </section>
+
+      <div class="sci-strip" id="sciStrip">
+        <button type="button" class="angle-toggle" id="angleToggle" aria-label="Toggle degrees or radians">DEG</button>
+        <span class="sci-strip-hint" id="sciHint">&nbsp;</span>
+      </div>
+
+      <section class="keys" id="keys" aria-label="Calculator keys"></section>
+
+    </main>
+
+    <footer class="footer">Made by Theo</footer>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
